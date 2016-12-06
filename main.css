@@ -1,0 +1,45 @@
+body {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 0;
+	width: 100%;
+}
+
+.kitchen {
+	background-image: url(img/background/kitchen.jpg);
+	background-repeat: no-repeat;
+	height: 937px;
+	width: 100%
+}
+
+.back-kitchen {
+	width: 100%;
+}
+
+#kitchen-freezer {
+	display: inline;
+}
+
+#kitchen-freezer img {
+	width: 14.58%;
+}
+
+#kitchen-stove {
+	display: inline;
+}
+
+#kitchen-stove img {
+	width: 20.83%;
+}
+
+#kitchen-cupboard {
+	display: inline;
+}
+
+#kitchen-cupboard img {
+	width: 25%;
+}
+
+.is-hidden {
+	display: none;
+}

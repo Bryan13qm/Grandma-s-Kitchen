@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8">
+		<title>Grandma's kitchen</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	
+	<body>
+		<header>
+			<h1>Grandma's Kitchen</h1>
+		</header>
+		
+<!-- kitchen section -->
+		<div class="kitchen">
+
+	<!-- this section is the back of kitchen-->
+			<div class="back-kitchen">
+				<div id="kitchen-freezer">
+					<img src="img/freezers/freezer1.gif">
+				</div>
+
+				<div id="kitchen-stove">
+					<img src="img/stoves/stove1.gif">
+				</div>
+
+				<div id="kitchen-cupboard">
+					<img src="img/cupboards/cupboard1.gif">
+					<div id="dishwasher" class="is-hidden">
+						<img src="img/dishwashers/dishwasher1.gif">
+					</div>	
+				</div>
+			</div>
+
+	<!-- this section is the front kitchen-->
+			<div class="front-kitchen">
+				<div id="kitchen-microwave">
+					<img src="">
+				</div>
+
+				<div id="kitchen-clickZone">
+					<img src="">
+				</div>
+
+				<div id="kitchen-mixer">
+					<img src="">
+				</div>
+
+				<div id="kitchen-blender">
+					<img src="">
+				</div>
+			</div>
+		</div>
+
+<!-- Resume of status -->
+		<div class="landing-page">
+			<div class="status">
+
+	<!-- here is player status -->
+				<h2>Estado</h2>
+
+				<form>
+					<div>
+						<label>Galletas<input type="text" name="stock" id="stock" value=""></label>
+					</div>
+					
+					<div>
+						<label>Galletas por segundo<input type="text" name="gps" id="gps" value=""></label>
+					</div>
+
+					<div>
+						<label>Todas las galletas<input type="text" name="allcookies" id="allcookies" value=""></label>
+					</div>
+
+					<div>
+						<label>Tiempo jugando<input type="text" name="playtime" id="playtime" value=""></label>
+					</div>
+				</form>
+			</div>
+	<!-- here is upgrade resume -->
+			<div class="status-kitchen">
+				<h2>Mejoras</h2>
+
+				<form>
+					<div class="is-block">
+						<label>Refrigeradora<input type="text" name="status-freezer" id="status-freezer" value=""></label>
+					</div>
+			
+					<div class="is-block">
+						<label>Horno<input type="text" name="status-stove" id="status-stove" value=""></label>
+					</div>
+
+					<div class="is-block">
+						<label>Alacena<input type="text" name="status-cupboard" id="status-cupboard" value=""></label>
+					</div>
+
+					<div class="is-hidden">
+						<label>Lavaplatos<input type="text" name="status-dishwasher" id="status-dishwasher" value=""></label>
+					</div>
+
+					<div class="is-block">
+						<label>Mescladora<input type="text" name="status-mixer" id="status-mixer" value=""></label>
+					</div>
+
+					<div class="is-hidden">
+						<label>Microondas<input type="text" name="status-microwave" id="status-microwave" value=""></label>
+					</div>
+
+					<div class="is-hidden">
+						<label>Licuadora<input type="text" name="status-blender" id="status-blender" value=""></label>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="shop-page">
+			<div class="shop-articles">
+				<h2>Tienda</h2>
+
+				<h3 id="articles">Articulos</h3>
+				
+				<button class="is-block" type="button" id="purchasable-blender">Licuadora</button>
+
+				<button class="is-block" type="button" id="purchasable-microwave">Microondas</button>
+
+				<button class="is-hidden" type="button" id="purchasable-dishwasher">Lavaplatos</button>
+			</div>
+
+			<div class="shop-upgrades">
+				<h3 id="upgrades">Mejoras</h3>
+	
+				<button class="is-block" type="buton" id="upgrade-freezer">Refrigeradora Lv2</button>
+
+				<button class="is-block" type="buton" id="upgrade-stove">Horno Lv2</button>
+
+				<button class="is-block" type="buton" id="upgrade-cupboard">Alacena Lv2</button>
+
+				<button class="is-hidden" type="buton" id="upgrade-dishwasher">Lavaplatos Lv2</button>
+
+				<button class="is-block" type="buton" id="upgrade-microwave">Microondas Lv2</button>
+
+				<button class="is-hidden" type="buton" id="upgrade-mixer">Mezcladora Lv2</button>
+
+				<button class="is-hidden" type="buton" id="upgrade-blender">Licuadora Lv2</button>
+			</div>
+		</div>
+	</body>
+</html>
