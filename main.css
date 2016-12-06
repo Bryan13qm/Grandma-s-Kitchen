@@ -1,18 +1,24 @@
 body {
 	margin: 0 auto;
-	max-width: 1200px;
 	padding: 0;
-	width: 100%;
+	width: 1200px;
 }
 
+
+/* LAYOUT */
+
+
+/* KITCHEN */
 .kitchen {
 	background-image: url(img/background/kitchen.jpg);
 	background-repeat: no-repeat;
 	height: 937px;
-	width: 100%
+	width: 100%;
 }
 
 .back-kitchen {
+	margin-left: 200px;
+	
 	width: 100%;
 }
 
@@ -21,7 +27,8 @@ body {
 }
 
 #kitchen-freezer img {
-	width: 14.58%;
+	padding-top: 250px;
+	width: 210px;
 }
 
 #kitchen-stove {
@@ -29,7 +36,7 @@ body {
 }
 
 #kitchen-stove img {
-	width: 20.83%;
+	width: 270px;
 }
 
 #kitchen-cupboard {
@@ -37,8 +44,12 @@ body {
 }
 
 #kitchen-cupboard img {
-	width: 25%;
+	width: 390px;
 }
+
+
+
+/*STATE */
 
 .is-hidden {
 	display: none;
