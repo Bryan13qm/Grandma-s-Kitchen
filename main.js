@@ -2,7 +2,7 @@ var Game={};
 
 Game.Launch=function(){
 	let cookies = 0;
-	let ratio = 0;
+	let gps = 0;
 	let total = 0;
 	let time = 0;
 	let freezer = 0;
@@ -17,10 +17,33 @@ Game.Launch=function(){
 	 	url: "json/data.json",
 	 	dataType: "json",
 	 	success: function(data){
-        	cookies = data.galletas_disponibles;
+        	stat(data);
     	}
     });
 
-
+	function stat(status){
+		cookies = status.galletas_disponibles;
+		gps = status.galletas_por_segundo;
+		total = status.todas_las_galletas;
+		time = status.tiempo_jugando;
+		freezer = status.refrigeradora_lvl;
+		stove = status.horno_lvl;
+		cupboard = status.alacena_lvl;
+		mixer = status.mescladora_lvl;
+		blender = status.licuadora_lvl;
+		microwave = status.microondas_lvl;
+		dishwasher = status.lavaplatos_lvl;
+		$("#stock").html(cookies);
+		$("#gps").html(gps);
+		$("#allcookies").html(total);
+		$("#playtime").html(time);
+		$("#status-freezer").html(freezer);
+		$("#status-stove").html(stove);
+		$("#status-cupboard").html(cupboard);
+		$("#status-mixer").html(mixer);
+		$("#status-blender").html(blender);
+		$("#status-microwave").html(microwave);
+		$("#status-dishwasher").html(dishwasher);
+	}
 };
 Game.Launch();
