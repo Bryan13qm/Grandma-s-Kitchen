@@ -87,7 +87,7 @@ jQuery(document).ready(function($){
 			function freeze(){
 				$("#upgrade-freezer").click(function(){
 					if (freezer == 1) {
-						if (cookies > 29) {
+						if (cookies > 99) {
 							$("#status-freezer").html("2");
 							$("#upgrade-freezer").html("Refrigeradora Lv3");
 							$("#kitchen-freezer img").attr( "src", "img/freezers/freezer8.gif");
@@ -100,7 +100,7 @@ jQuery(document).ready(function($){
 
 			function stov(){
 				$("#upgrade-stove").click(function(){
-					if (freezer == 1) {
+					if (stove == 1) {
 						if (cookies > 29) {
 							$("#status-stove").html("2");
 							$("#upgrade-stove").html("Horno Lv3");
@@ -114,10 +114,10 @@ jQuery(document).ready(function($){
 
 			function cupboar(){
 				$("#upgrade-cupboard").click(function(){
-					if (freezer == 1) {
+					if (cupboard == 1) {
 						if (cookies > 29) {
 							$("#status-cupboard").html("2");
-							$("#upgrade-cupboard").html("Horno Lv3");
+							$("#upgrade-cupboard").html("Alacena Lv3");
 							$("#kitchen-cupboard img").attr( "src", "img/cupboards/cupboard2.gif");
 							gps+=0.5;
 							$("#gps").html(gps);
