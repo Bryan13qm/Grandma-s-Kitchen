@@ -73,13 +73,17 @@ jQuery(document).ready(function($){
 			}, 1000);
 		}
 
-		function prod (){
+		function prod(){
 			$("#kitchen-clickzone").click(function(){
-				
+				cookies ++;
+				total ++;
+				$("#stock").html(cookies);
+				$("#allcookies").html(total);
 			});
 		}
 
 		timing();
+		prod();
 	}
 		
 	Game.Launch();
