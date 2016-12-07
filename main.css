@@ -54,3 +54,7 @@ body {
 .is-hidden {
 	display: none;
 }
+
+.is-inline {
+	display: inline;
+}
