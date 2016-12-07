@@ -51,8 +51,9 @@ jQuery(document).ready(function($){
 			var min = 0;
 			var hr = 0;
 			setInterval(function(){ 
-				 // let stock = cookies + gps;
-				 // $("#stock").html(stock);
+
+				cookies += gps;
+				$("#stock").html(cookies);
 
 				sec ++;
 
@@ -82,8 +83,72 @@ jQuery(document).ready(function($){
 			});
 		}
 
+		function items(){
+			function freeze(){
+				$("#upgrade-freezer").click(function(){
+					if (freezer == 1) {
+						if (cookies > 29) {
+							$("#status-freezer").html("2");
+							$("#upgrade-freezer").html("Refrigeradora Lv3");
+							$("#kitchen-freezer img").attr( "src", "img/freezers/freezer8.gif");
+							gps+=0.5;
+							$("#gps").html(gps);
+						}
+					}
+				});
+			};
+
+			function stov(){
+				$("#upgrade-stove").click(function(){
+					if (freezer == 1) {
+						if (cookies > 29) {
+							$("#status-stove").html("2");
+							$("#upgrade-stove").html("Horno Lv3");
+							$("#kitchen-stove img").attr( "src", "img/stoves/stove4.gif");
+							gps+=0.5;
+							$("#gps").html(gps);
+						}
+					}
+				});
+			};
+
+			function cupboar(){
+				$("#upgrade-cupboard").click(function(){
+					if (freezer == 1) {
+						if (cookies > 29) {
+							$("#status-cupboard").html("2");
+							$("#upgrade-cupboard").html("Horno Lv3");
+							$("#kitchen-cupboard img").attr( "src", "img/cupboards/cupboard2.gif");
+							gps+=0.5;
+							$("#gps").html(gps);
+						}
+					}
+				});
+			};
+
+			function mixe(){
+				$("#upgrade-mixer").click(function(){
+					if (mixer == 1) {
+						if (cookies > 29) {
+							$("#status-mixer").html("2");
+							$("#upgrade-mixer").html("Mezcladora Lv3");
+							$("#kitchen-mixer img").attr( "src", "img/mixers/mixer3.png");
+							gps+=0.5;
+							$("#gps").html(gps);
+						}
+					}
+				});
+			};
+			freeze();
+			stov();
+			cupboar();
+			mixe();
+		}
+
 		timing();
 		prod();
+		items();
+		mixe();
 	}
 		
 	Game.Launch();

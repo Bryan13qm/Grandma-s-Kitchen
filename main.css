@@ -4,10 +4,7 @@ body {
 	width: 1200px;
 }
 
-
 /* LAYOUT */
-
-
 /* KITCHEN */
 .kitchen {
 	background-image: url(img/background/kitchen.jpg);
@@ -18,7 +15,7 @@ body {
 
 .back-kitchen {
 	margin-left: 200px;
-	
+	padding-top: 250px;
 	width: 100%;
 }
 
@@ -27,7 +24,7 @@ body {
 }
 
 #kitchen-freezer img {
-	padding-top: 250px;
+	height: 400px;
 	width: 210px;
 }
 
@@ -44,6 +41,7 @@ body {
 }
 
 #kitchen-cupboard img {
+	height: 410px;
 	width: 390px;
 }
 
@@ -54,6 +52,8 @@ body {
 #kitchen-clickzone img {
 	width: 130px;
 }
+
+
 /*STATE */
 
 .is-hidden {
