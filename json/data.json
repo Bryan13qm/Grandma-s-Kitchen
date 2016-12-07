@@ -1,0 +1,13 @@
+{
+	"galletas_disponibles" : 0,
+	"galletas_por_segundo" : 0,
+	"todas_las_galletas" : 0,
+	"tiempo_jugando" : 0,
+	"refrigeradora_lvl" : 1,
+	"horno_lvl": 1,
+	"alacena_lvl" : 1,
+	"mescladora_lvl" : 1,
+	"licuadora_lvl " : 0,
+	"microondas_lvl" : 0,
+	"lavaplatos_lvl" : 0
+}

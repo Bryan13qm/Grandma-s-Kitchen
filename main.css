@@ -47,8 +47,13 @@ body {
 	width: 390px;
 }
 
+.front-kitchen {
+	margin-top: 110px;
+}
 
-
+#kitchen-clickzone img {
+	width: 130px;
+}
 /*STATE */
 
 .is-hidden {
