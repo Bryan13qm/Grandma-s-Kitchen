@@ -299,13 +299,13 @@ jQuery(document).ready(function($){
 			$("#status-dishwasher").html(loadable.dishwasher);
 
 
-			ufreezer = freezer ++;
-			ustove = stove ++;
-			ucupboard = cupboard ++;
-			umixer = mixer ++;
-			ublender = blender ++;
-			umicrowave = microwave ++;
-			udishwasher = dishwasher ++;
+			ufreezer = 1;
+			ustove = 1;
+			ucupboard = 1;
+			umixer = 1;
+			ublender = 1;
+			umicrowave = 1;
+			udishwasher = 1;
 
 			$("#upgrade-freezer").html("Refrigeradora Lv" + ufreezer);
 			$("#upgrade-stove").html("Horno Lv" + ustove);
