@@ -297,22 +297,6 @@ jQuery(document).ready(function($){
 			$("#status-blender").html(loadable.blender);
 			$("#status-microwave").html(loadable.microwave);
 			$("#status-dishwasher").html(loadable.dishwasher);
-
-			/*$("#upgrade-freezer").html("Refrigeradora Lv" + ufreezer);
-			$("#upgrade-stove").html("Horno Lv" + ustove);
-			$("#upgrade-cupboard").html("Alacena Lv" + ucupboard);
-			$("#upgrade-mixer").html("Mezcladora Lv" + umixer);
-			$("#upgrade-blender").html("Licuadora Lv" + ublender);
-			$("#upgrade-microwave").html("Microondas Lv" + umicrowave);
-			$("#upgrade-dishwasher").html("Lavaplatos Lv" + udishwasher);
-			
-			$("#kitchen-freezer img").attr( "src", "img/freezers/freezer"+ freezer +".png");
-			$("#kitchen-stove img").attr( "src", "img/stoves/stove"+ stove +".png");
-			$("#kitchen-cupboard img").attr( "src", "img/cupboards/cupboard"+ cupboard +".png");
-			$("#kitchen-mixer img").attr( "src", "img/mixers/mixer"+ mixer +".png");
-			$("#kitchen-blender img").attr( "src", "img/blenders/blender"+ blender +".png");
-			$("#kitchen-microwave img").attr( "src", "img/microwaves/microwave"+ microwave +".png");
-			$("#kitchen-dishwasher img").attr( "src", "img/dishwashers/dishwasher"+ dishwasher +".png");*/
 		}
 
 		$("#save").click(function(){
