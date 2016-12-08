@@ -88,9 +88,9 @@ jQuery(document).ready(function($){
 			});
 		}
 
+		//
+		//items upgrade to lvl 2
 		function items(){
-			//
-			//items upgrade to lvl 2
 			//
 			//freezer
 			//
@@ -151,7 +151,7 @@ jQuery(document).ready(function($){
 			function diLv2(){
 				$("#upgrade-dishwasher").click(function(){
 					if (dishwasher == 1) {
-						if (cookies < 1) {
+						if (cookies > 1) {
 							$("#status-dishwasher").html("2");
 							$("#upgrade-dishwasher").html("");//"Lavaplatos Lv3"
 							$("#kitchen-dishwasher img").attr( "src", "img/dishwashers/dishwasher2.png");
@@ -247,6 +247,7 @@ jQuery(document).ready(function($){
 			prodLv2();
 		}
 
+		//function to save game in local storage
 		function save() {
 			let saved = {
 				"cookies": cookies,
@@ -267,6 +268,7 @@ jQuery(document).ready(function($){
 			window.localStorage.saved = JSON.stringify(saved);
 		}
 
+		//function to take saved game and load it to page
 		function load(){
 			let loadable = JSON.parse(localStorage.saved);
 			cookies = loadable.cookies;
@@ -295,11 +297,37 @@ jQuery(document).ready(function($){
 			$("#status-blender").html(loadable.blender);
 			$("#status-microwave").html(loadable.microwave);
 			$("#status-dishwasher").html(loadable.dishwasher);
+
+
+			ufreezer = freezer ++;
+			ustove = stove ++;
+			ucupboard = cupboard ++;
+			umixer = mixer ++;
+			ublender = blender ++;
+			umicrowave = microwave ++;
+			udishwasher = dishwasher ++;
+
+			$("#upgrade-freezer").html("Refrigeradora Lv" + ufreezer);
+			$("#upgrade-stove").html("Horno Lv" + ustove);
+			$("#upgrade-cupboard").html("Alacena Lv" + ucupboard);
+			$("#upgrade-mixer").html("Mezcladora Lv" + umixer);
+			$("#upgrade-blender").html("Licuadora Lv" + ublender);
+			$("#upgrade-microwave").html("Microondas Lv" + umicrowave);
+			$("#upgrade-dishwasher").html("Lavaplatos Lv" + udishwasher);
+			
+			$("#kitchen-freezer img").attr( "src", "img/freezers/freezer"+ freezer +".png");
+			$("#kitchen-stove img").attr( "src", "img/stoves/stove"+ stove +".png");
+			$("#kitchen-cupboard img").attr( "src", "img/cupboards/cupboard"+ cupboard +".png");
+			$("#kitchen-mixer img").attr( "src", "img/mixers/mixer"+ mixer +".png");
+			$("#kitchen-blender img").attr( "src", "img/blenders/blender"+ blender +".png");
+			$("#kitchen-microwave img").attr( "src", "img/microwaves/microwave"+ microwave +".png");
+			$("#kitchen-dishwasher img").attr( "src", "img/dishwashers/dishwasher"+ dishwasher +".png");
 		}
 
 		$("#save").click(function(){
 			save();
 		});
+
 		setInterval(save, 60000);
 		timing();
 		prod();
