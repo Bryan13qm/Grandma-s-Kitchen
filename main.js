@@ -12,12 +12,18 @@ jQuery(document).ready(function($){
 		let blender = 0;
 		let microwave = 0;
 		let dishwasher = 0;
+		let sec = 0;
+		let min = 0;
+		let hr = 0;
 
 		$.ajax({
 		 	url: "json/data.json",
 		 	dataType: "json",
 		 	success: function(data){
 	        	stat(data);
+	        	if (localStorage.saved !== undefined || localStorage.saved !== "") {
+	        		load();
+	        	}
 	    	}
 	    });
 
@@ -47,9 +53,6 @@ jQuery(document).ready(function($){
 		}
 
 		function timing(){
-			var sec = 0;
-			var min = 0;
-			var hr = 0;
 			setInterval(function(){ 
 
 				cookies += gps;
@@ -70,7 +73,7 @@ jQuery(document).ready(function($){
 					min = 0;
 					hr ++;
 				}
-					
+				time = hr + ":" + min + ":" + sec;
 				document.getElementById("playtime").innerHTML = hr + ":" + min + ":" + sec; 
 				// I used vanilla javascript for this statement for performance reasons 
 			}, 1000);
@@ -84,6 +87,7 @@ jQuery(document).ready(function($){
 				$("#allcookies").html(total);
 			});
 		}
+
 		function items(){
 			//
 			//items upgrade to lvl 2
@@ -99,6 +103,7 @@ jQuery(document).ready(function($){
 							$("#kitchen-freezer img").attr( "src", "img/freezers/freezer4.gif");
 							cookies-=100;
 							gps+=2.5;
+							freezer = 2;
 							$("#gps").html(gps);
 						}
 					}
@@ -116,6 +121,7 @@ jQuery(document).ready(function($){
 							$("#kitchen-stove img").attr( "src", "img/stoves/stove4.gif");
 							cookies-=80;
 							gps+=1.5;
+							stove = 2;
 							$("#gps").html(gps);
 						}
 					}
@@ -133,6 +139,7 @@ jQuery(document).ready(function($){
 							$("#kitchen-cupboard img").attr( "src", "img/cupboards/cupboard2.gif");
 							cookies-=30;
 							gps+=0.5;
+							cupboard = 2;
 							$("#gps").html(gps);
 						}
 					}
@@ -150,6 +157,7 @@ jQuery(document).ready(function($){
 							$("#kitchen-dishwasher img").attr( "src", "img/dishwashers/dishwasher2.png");
 							cookies-=10;
 							gps+=0.5;
+							dishwasher = 2;
 							$("#gps").html(gps);
 						}
 					}
@@ -167,6 +175,7 @@ jQuery(document).ready(function($){
 							$("#kitchen-mixer img").attr( "src", "img/mixers/mixer3.png");
 							cookies-=10;
 							gps+=0.5;
+							mixer = 2;
 							$("#gps").html(gps);
 						}
 					}
@@ -184,6 +193,7 @@ jQuery(document).ready(function($){
 							$("#kitchen-blender img").attr( "src", "img/blenders/blender2.png");
 							cookies-=400;
 							gps+=15;
+							blender = 2;
 							$("#gps").html(gps);
 						}
 					}
@@ -201,6 +211,7 @@ jQuery(document).ready(function($){
 							$("#kitchen-microwave img").attr( "src", "img/microwaves/microwave2.png");
 							cookies-=600;
 							gps+=22;
+							microwave = 2;
 							$("#gps").html(gps);
 						}
 					}
@@ -217,28 +228,82 @@ jQuery(document).ready(function($){
 							$("#stock").html(cookies);
 							$("#allcookies").html(total);
 					}  
-			});
+				});
 			}
-
 			//
 			//mading appear new articles
 			//
 			function diLv1(){
-				
+
 			}
 
 			frLv2();
 			stLv2();
 			cuLv2();
+			diLv2();
 			mixLv2();
 			blLv2();
 			micLv2();
-			proudLv2();
+			prodLv2();
 		}
+
+		function save() {
+			let saved = {
+				"cookies": cookies,
+				"gps": gps,
+				"total": total,
+				"time": time,
+				"freezer": freezer,
+				"stove": stove,
+				"cupboard": cupboard,
+				"mixer": mixer,
+				"blender": blender,
+				"microwave": microwave,
+				"dishwasher": dishwasher,
+				"sec": sec,
+				"min": min,
+				"hr": hr
+			};
+			window.localStorage.saved = JSON.stringify(saved);
+		}
+
+		function load(){
+			let loadable = JSON.parse(localStorage.saved);
+			cookies = loadable.cookies;
+			gps = loadable.gps;
+			total = loadable.total;
+			time = loadable.time;
+			freezer = loadable.freezer;
+			stove = loadable.stove;
+			cupboard = loadable.cupboard;
+			mixer = loadable.mixer;
+			blender = loadable.blender;
+			microwave = loadable.microwave;
+			dishwasher = loadable.dishwasher;
+			sec = loadable.sec;
+			min = loadable.min;
+			hr = loadable.hr;
+
+			$("#stock").html(loadable.cookies);
+			$("#gps").html(loadable.gps);
+			$("#allcookies").html(loadable.total);
+			$("#playtime").html(loadable.time);
+			$("#status-freezer").html(loadable.freezer);
+			$("#status-stove").html(loadable.stove);
+			$("#status-cupboard").html(loadable.cupboard);
+			$("#status-mixer").html(loadable.mixer);
+			$("#status-blender").html(loadable.blender);
+			$("#status-microwave").html(loadable.microwave);
+			$("#status-dishwasher").html(loadable.dishwasher);
+		}
+
+		$("#save").click(function(){
+			save();
+		});
+		setInterval(save, 60000);
 		timing();
 		prod();
 		items();
-		mixe();
 	}
 	
 	Game.Launch();
