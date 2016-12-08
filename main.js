@@ -265,7 +265,7 @@ jQuery(document).ready(function($){
 				"min": min,
 				"hr": hr
 			};
-			window.localStorage.saved = JSON.stringify(saved);
+		//	window.localStorage.saved = JSON.stringify(saved);
 		}
 
 		//function to take saved game and load it to page
