@@ -53,7 +53,9 @@ jQuery(document).ready(function($){
 			setInterval(function(){ 
 
 				cookies += gps;
+				total += gps;
 				$("#stock").html(cookies);
+				$("#allcookies").html(total);
 
 				sec ++;
 
@@ -82,74 +84,162 @@ jQuery(document).ready(function($){
 				$("#allcookies").html(total);
 			});
 		}
-
 		function items(){
-			function freeze(){
+			//
+			//items upgrade to lvl 2
+			//
+			//freezer
+			//
+			function frLv2(){
 				$("#upgrade-freezer").click(function(){
 					if (freezer == 1) {
 						if (cookies > 99) {
 							$("#status-freezer").html("2");
-							$("#upgrade-freezer").html("Refrigeradora Lv3");
-							$("#kitchen-freezer img").attr( "src", "img/freezers/freezer8.gif");
-							gps+=0.5;
+							$("#upgrade-freezer").html("");//"Refrigeradora Lv3"
+							$("#kitchen-freezer img").attr( "src", "img/freezers/freezer4.gif");
+							cookies-=100;
+							gps+=2.5;
 							$("#gps").html(gps);
 						}
 					}
 				});
 			};
-
-			function stov(){
+			//
+			//stove
+			//
+			function stLv2(){
 				$("#upgrade-stove").click(function(){
 					if (stove == 1) {
-						if (cookies > 29) {
+						if (cookies > 79) {
 							$("#status-stove").html("2");
-							$("#upgrade-stove").html("Horno Lv3");
+							$("#upgrade-stove").html("");//"Horno Lv3"
 							$("#kitchen-stove img").attr( "src", "img/stoves/stove4.gif");
-							gps+=0.5;
+							cookies-=80;
+							gps+=1.5;
 							$("#gps").html(gps);
 						}
 					}
 				});
-			};
-
-			function cupboar(){
+			};	
+			//
+			//cupboard
+			//
+			function cuLv2(){
 				$("#upgrade-cupboard").click(function(){
 					if (cupboard == 1) {
 						if (cookies > 29) {
 							$("#status-cupboard").html("2");
-							$("#upgrade-cupboard").html("Alacena Lv3");
+							$("#upgrade-cupboard").html("");//"Alacena Lv3"
 							$("#kitchen-cupboard img").attr( "src", "img/cupboards/cupboard2.gif");
+							cookies-=30;
 							gps+=0.5;
 							$("#gps").html(gps);
 						}
 					}
 				});
 			};
-
-			function mixe(){
+			//
+			//dishwasher //pendiente precio
+			//    
+			function diLv2(){
+				$("#upgrade-dishwasher").click(function(){
+					if (dishwasher == 1) {
+						if (cookies < 1) {
+							$("#status-dishwasher").html("2");
+							$("#upgrade-dishwasher").html("");//"Lavaplatos Lv3"
+							$("#kitchen-dishwasher img").attr( "src", "img/dishwashers/dishwasher2.png");
+							cookies-=10;
+							gps+=0.5;
+							$("#gps").html(gps);
+						}
+					}
+				});
+			};
+			//
+			//mixer
+			//
+			function mixLv2(){
 				$("#upgrade-mixer").click(function(){
 					if (mixer == 1) {
-						if (cookies > 29) {
+						if (cookies > 9) {
 							$("#status-mixer").html("2");
-							$("#upgrade-mixer").html("Mezcladora Lv3");
+							$("#upgrade-mixer").html("");//"Mezcladora Lv3"
 							$("#kitchen-mixer img").attr( "src", "img/mixers/mixer3.png");
+							cookies-=10;
 							gps+=0.5;
 							$("#gps").html(gps);
 						}
 					}
 				});
 			};
-			freeze();
-			stov();
-			cupboar();
-			mixe();
-		}
+			//
+			//blender
+			//
+			function blLv2(){
+				$("#upgrade-blender").click(function(){
+					if (blender == 1) {
+						if (cookies > 399) {
+							$("#status-blender").html("2");
+							$("#upgrade-blender").html("");//"Licuadora Lv3"
+							$("#kitchen-blender img").attr( "src", "img/blenders/blender2.png");
+							cookies-=400;
+							gps+=15;
+							$("#gps").html(gps);
+						}
+					}
+				});
+			};
+			//
+			//microwave
+			//
+			function micLv2(){
+				$("#upgrade-microwave").click(function(){
+					if (microwave == 1) {
+						if (cookies > 599) {
+							$("#status-microwave").html("2");
+							$("#upgrade-microwave").html("");//"Microondas Lv3"
+							$("#kitchen-microwave img").attr( "src", "img/microwaves/microwave2.png");
+							cookies-=600;
+							gps+=22;
+							$("#gps").html(gps);
+						}
+					}
+				});
+			};
+			//
+			//click
+			//
+			function prodLv2(){
+				$("#kitchen-clickzone").click(function(){
+					if ((freezer == 2) && (stove == 2) && (cupboard == 2) && (dishwasher == 1) && (mixer == 2) && (blender == 2) && (microwave == 2)){
+						cookies += 200;
+						total += 200;
+							$("#stock").html(cookies);
+							$("#allcookies").html(total);
+					}  
+			});
+			}
 
+			//
+			//mading appear new articles
+			//
+			function diLv1(){
+				
+			}
+
+			frLv2();
+			stLv2();
+			cuLv2();
+			mixLv2();
+			blLv2();
+			micLv2();
+			proudLv2();
+		}
 		timing();
 		prod();
 		items();
 		mixe();
 	}
-		
+	
 	Game.Launch();
 });

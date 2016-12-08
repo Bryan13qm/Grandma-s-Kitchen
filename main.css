@@ -46,13 +46,16 @@ body {
 }
 
 .front-kitchen {
-	margin-top: 110px;
+	margin-top: 75px;
 }
 
 #kitchen-clickzone img {
 	width: 130px;
 }
 
+footer {
+	height: 100px;
+}
 
 /*STATE */
 
