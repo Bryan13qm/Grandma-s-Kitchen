@@ -298,16 +298,7 @@ jQuery(document).ready(function($){
 			$("#status-microwave").html(loadable.microwave);
 			$("#status-dishwasher").html(loadable.dishwasher);
 
-
-			ufreezer = 1;
-			ustove = 1;
-			ucupboard = 1;
-			umixer = 1;
-			ublender = 1;
-			umicrowave = 1;
-			udishwasher = 1;
-
-			$("#upgrade-freezer").html("Refrigeradora Lv" + ufreezer);
+			/*$("#upgrade-freezer").html("Refrigeradora Lv" + ufreezer);
 			$("#upgrade-stove").html("Horno Lv" + ustove);
 			$("#upgrade-cupboard").html("Alacena Lv" + ucupboard);
 			$("#upgrade-mixer").html("Mezcladora Lv" + umixer);
@@ -321,7 +312,7 @@ jQuery(document).ready(function($){
 			$("#kitchen-mixer img").attr( "src", "img/mixers/mixer"+ mixer +".png");
 			$("#kitchen-blender img").attr( "src", "img/blenders/blender"+ blender +".png");
 			$("#kitchen-microwave img").attr( "src", "img/microwaves/microwave"+ microwave +".png");
-			$("#kitchen-dishwasher img").attr( "src", "img/dishwashers/dishwasher"+ dishwasher +".png");
+			$("#kitchen-dishwasher img").attr( "src", "img/dishwashers/dishwasher"+ dishwasher +".png");*/
 		}
 
 		$("#save").click(function(){
